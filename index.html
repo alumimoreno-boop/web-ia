@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Guía de inteligencia artificial con un laboratorio interactivo: entrena una IA, mira una red neuronal y predice palabras.">
+  <title>Inteligencia Artificial | Guía interactiva</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- FONDO: manchas y burbujas que se ven a través del vidrio -->
+  <div class="fondo" aria-hidden="true">
+    <span class="mancha m1"></span><span class="mancha m2"></span><span class="mancha m3"></span>
+    <span class="burbuja b1"></span><span class="burbuja b2"></span><span class="burbuja b3"></span><span class="burbuja b4"></span>
+  </div>
+  <div class="luz" aria-hidden="true"></div>
+  <div class="progreso" aria-hidden="true"></div>
+
+  <!-- MENÚ -->
+  <header class="menu vidrio">
+    <a href="#inicio" class="logo">IA<span>.guía</span></a>
+    <nav>
+      <a href="#que-es">Qué es</a>
+      <a href="#historia">Historia</a>
+      <a href="#tipos">Tipos</a>
+      <a href="#usos">Usos</a>
+      <a href="#laboratorio">Laboratorio</a>
+    </nav>
+    <div class="acciones">
+      <button id="boton-modo" class="boton-vidrio" type="button" aria-label="Cambiar modo">Modo oscuro</button>
+    </div>
+  </header>
+
+  <!-- PORTADA -->
+  <section id="inicio" class="portada">
+    <canvas id="red" aria-hidden="true"></canvas>
+    <div class="portada-caja vidrio">
+      <h1>Máquinas que <span id="palabra" class="palabra">aprenden</span></h1>
+      <p>Descubre cómo funciona la inteligencia artificial y experimenta con ella en un laboratorio interactivo.</p>
+      <a href="#laboratorio" class="boton-vidrio principal">Ir al laboratorio</a>
+      <a href="#que-es" class="boton-vidrio">Leer la guía</a>
+    </div>
+  </section>
+
+
+  <!-- CINTA DE CONCEPTOS -->
+  <div class="cinta vidrio" aria-hidden="true">
+    <div class="cinta-pista">
+      <span>Aprendizaje automático</span><span>Redes neuronales</span><span>Visión por computadora</span><span>Procesamiento del lenguaje</span><span>IA generativa</span><span>Robótica</span>
+      <span>Aprendizaje automático</span><span>Redes neuronales</span><span>Visión por computadora</span><span>Procesamiento del lenguaje</span><span>IA generativa</span><span>Robótica</span>
+    </div>
+  </div>
+
+  <!-- CIFRAS -->
+  <div class="cifras">
+    <div class="vidrio cifra aparece"><b class="contador" data-meta="1956">0</b><span>nace el término "inteligencia artificial"</span></div>
+    <div class="vidrio cifra aparece"><b class="contador" data-meta="1997">0</b><span>Deep Blue vence a Kasparov</span></div>
+    <div class="vidrio cifra aparece"><b class="contador" data-meta="2022">0</b><span>llega la IA generativa al público</span></div>
+  </div>
+
+  <main>
+    <section id="que-es" class="seccion">
+      <h2 class="aparece">¿Qué es la inteligencia artificial?</h2>
+      <div class="vidrio panel aparece">
+        <p>La inteligencia artificial (IA) es la capacidad de un programa para realizar tareas que normalmente requieren inteligencia humana: reconocer imágenes, entender el lenguaje, tomar decisiones o crear textos.</p>
+        <p>La mayoría de los sistemas actuales no siguen reglas escritas una por una. Aprenden patrones a partir de muchos datos. A esto se le llama <strong>aprendizaje automático</strong> (machine learning).</p>
+      </div>
+      <div class="tarjetas">
+        <article class="vidrio tarjeta aparece"><h3>1. Datos</h3><p>Se reúnen ejemplos: fotos, textos, sonidos o números.</p></article>
+        <article class="vidrio tarjeta aparece"><h3>2. Entrenamiento</h3><p>El modelo ajusta miles de valores internos hasta acertar más.</p></article>
+        <article class="vidrio tarjeta aparece"><h3>3. Predicción</h3><p>Con lo aprendido, responde ante datos que nunca vio.</p></article>
+      </div>
+    </section>
+
+    <section id="historia" class="seccion">
+      <h2 class="aparece">Historia en pocas fechas</h2>
+      <ul class="linea-tiempo">
+        <li class="vidrio aparece"><strong>1950</strong><p>Alan Turing propone una prueba para saber si una máquina puede pensar.</p></li>
+        <li class="vidrio aparece"><strong>1956</strong><p>En la conferencia de Dartmouth se usa por primera vez el término "inteligencia artificial".</p></li>
+        <li class="vidrio aparece"><strong>1997</strong><p>Deep Blue de IBM vence al campeón de ajedrez Garry Kasparov.</p></li>
+        <li class="vidrio aparece"><strong>2016</strong><p>AlphaGo vence a Lee Sedol en el juego de Go.</p></li>
+        <li class="vidrio aparece"><strong>2022</strong><p>Los asistentes de chat y los generadores de imágenes llegan al público general.</p></li>
+      </ul>
+    </section>
+
+    <section id="tipos" class="seccion">
+      <h2 class="aparece">Tipos de IA</h2>
+      <div class="tarjetas">
+        <article class="vidrio tarjeta aparece"><h3>IA estrecha</h3><p>Hace una sola tarea muy bien, como recomendar videos o traducir. Es la única que existe hoy.</p></article>
+        <article class="vidrio tarjeta aparece"><h3>IA general</h3><p>Podría aprender cualquier tarea intelectual como una persona. Sigue siendo un objetivo de investigación.</p></article>
+        <article class="vidrio tarjeta aparece"><h3>IA generativa</h3><p>Crea contenido nuevo: texto, imágenes, música o código, a partir de lo que aprendió.</p></article>
+      </div>
+    </section>
+
+    <section id="usos" class="seccion">
+      <h2 class="aparece">Dónde la usamos</h2>
+      <div class="tarjetas cuatro">
+        <article class="vidrio tarjeta aparece"><h3>Celular</h3><p>Desbloqueo facial, corrector del teclado y asistentes de voz.</p></article>
+        <article class="vidrio tarjeta aparece"><h3>Salud</h3><p>Ayuda a detectar enfermedades en radiografías y a investigar medicinas.</p></article>
+        <article class="vidrio tarjeta aparece"><h3>Educación</h3><p>Tutores personalizados y herramientas de traducción.</p></article>
+        <article class="vidrio tarjeta aparece"><h3>Transporte</h3><p>Rutas en mapas y sistemas de conducción asistida.</p></article>
+      </div>
+      <button id="boton-mas" class="boton-vidrio" type="button" aria-expanded="false" aria-controls="texto-mas">Leer más sobre riesgos</button>
+      <div id="texto-mas" class="vidrio panel oculto">
+        <p>La IA también tiene retos: puede repetir prejuicios presentes en los datos, inventar información que parece cierta y plantea dudas sobre privacidad y empleo. Por eso es importante verificar lo que produce.</p>
+      </div>
+    </section>
+
+    <!-- JUEGOS -->
+    <section id="laboratorio" class="seccion">
+      <h2 class="aparece">Juegos de inteligencia</h2>
+      <div class="vidrio panel juegos aparece">
+        <div class="pestanas" role="tablist">
+          <button class="pestana activa" data-juego="tres" type="button">⭕ Tres en raya</button>
+          <button class="pestana" data-juego="rps" type="button">✊ Piedra, papel o tijera</button>
+          <button class="pestana" data-juego="robot" type="button">🤖 Robot en el laberinto</button>
+          <button class="pestana" data-juego="simon" type="button">🎵 Simón</button>
+        </div>
+
+        <!-- JUEGO 1: TRES EN RAYA -->
+        <div id="juego-tres" class="juego">
+          <p class="nota"><b>Qué aprendes:</b> la IA usa un algoritmo llamado minimax. Imagina todas las jugadas posibles y elige la mejor. En nivel Imposible no puedes ganarle.</p>
+          <div class="opciones-juego">
+            <label>Dificultad <select id="tres-nivel"><option value="1">Fácil</option><option value="0.35" selected>Medio</option><option value="0">Imposible</option></select></label>
+            <label>Empieza <select id="tres-inicio"><option value="yo">Tú</option><option value="ia">La IA</option></select></label>
+            <button id="tres-nuevo" class="boton-vidrio" type="button">Nueva partida</button>
+          </div>
+          <div class="marcador"><span>Tú <b id="tres-yo">0</b></span><span>Empates <b id="tres-emp">0</b></span><span>IA <b id="tres-ia">0</b></span></div>
+          <div id="tres-tablero" class="tres-tablero"></div>
+          <p id="tres-msg" class="meta centro"></p>
+        </div>
+
+        <!-- JUEGO 2: PIEDRA, PAPEL O TIJERA -->
+        <div id="juego-rps" class="juego oculto">
+          <p class="nota"><b>Qué aprendes:</b> la IA anota qué jugada haces después de cada jugada y predice la siguiente. Si eres predecible, te gana. Si juegas al azar, no puede.</p>
+          <div class="opciones-juego">
+            <label>La IA <select id="rps-modo"><option value="aprende">Aprende de ti</option><option value="azar">Juega al azar</option></select></label>
+            <button id="rps-reiniciar" class="boton-vidrio" type="button">Reiniciar</button>
+          </div>
+          <div class="marcador"><span>Tú <b id="rps-yo">0</b></span><span>Empates <b id="rps-emp">0</b></span><span>IA <b id="rps-ia">0</b></span></div>
+          <div class="rps-escena"><div id="rps-tu" class="rps-mano">❔</div><span>VS</span><div id="rps-iam" class="rps-mano">❔</div></div>
+          <div class="rps-botones">
+            <button class="boton-vidrio" data-mov="0" type="button">✊ Piedra</button>
+            <button class="boton-vidrio" data-mov="1" type="button">✋ Papel</button>
+            <button class="boton-vidrio" data-mov="2" type="button">✌️ Tijera</button>
+          </div>
+          <p id="rps-msg" class="meta centro">Elige una jugada.</p>
+          <p class="etiqueta">Lo que la IA cree que harás después</p>
+          <div id="rps-pred" class="barras"></div>
+        </div>
+
+        <!-- JUEGO 3: ROBOT EN EL LABERINTO -->
+        <div id="juego-robot" class="juego oculto">
+          <p class="nota"><b>Qué aprendes:</b> aprendizaje por refuerzo. El robot prueba caminos, recibe premio al llegar a la bandera y poco a poco descubre la mejor ruta. Haz clic en el mapa para poner o quitar muros.</p>
+          <div class="opciones-juego">
+            <label>Velocidad <select id="rob-vel"><option value="1">Lenta</option><option value="6" selected>Normal</option><option value="50">Rápida</option></select></label>
+            <button id="rob-entrenar" class="boton-vidrio principal" type="button">Entrenar</button>
+            <button id="rob-ruta" class="boton-vidrio" type="button">Ver ruta</button>
+            <button id="rob-reset" class="boton-vidrio" type="button">Borrar aprendizaje</button>
+            <button id="rob-limpiar" class="boton-vidrio" type="button">Quitar muros</button>
+          </div>
+          <canvas id="robot" width="480" height="360" aria-label="Laberinto del robot"></canvas>
+          <p id="rob-info" class="meta centro"></p>
+        </div>
+
+        <!-- JUEGO 4: SIMÓN -->
+        <div id="juego-simon" class="juego oculto">
+          <p class="nota"><b>Qué aprendes:</b> la memoria de trabajo. Mira la secuencia de luces y sonidos y repítela. Cada nivel agrega un paso más.</p>
+          <div class="opciones-juego">
+            <label>Velocidad <select id="simon-vel"><option value="900">Lenta</option><option value="600" selected>Normal</option><option value="350">Rápida</option></select></label>
+            <label class="check"><input type="checkbox" id="simon-sonido" checked> Sonido</label>
+            <button id="simon-inicio" class="boton-vidrio principal" type="button">Empezar</button>
+          </div>
+          <div class="marcador"><span>Nivel <b id="simon-nivel">0</b></span><span>Récord <b id="simon-rec">0</b></span></div>
+          <div class="simon-tablero">
+            <button class="pad p0" data-i="0" type="button" aria-label="Pad verde"></button>
+            <button class="pad p1" data-i="1" type="button" aria-label="Pad rojo"></button>
+            <button class="pad p2" data-i="2" type="button" aria-label="Pad amarillo"></button>
+            <button class="pad p3" data-i="3" type="button" aria-label="Pad azul"></button>
+          </div>
+          <p id="simon-msg" class="meta centro">Pulsa Empezar.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="vidrio pie">
+    <p>Proyecto informativo creado por [Tu nombre]. Fuentes: libros de texto y sitios educativos sobre IA.</p>
+  </footer>
+
+  <!-- AJUSTES -->
+  <button id="ajustes-boton" class="ajustes-boton vidrio" type="button" aria-label="Abrir ajustes" aria-expanded="false">⚙</button>
+  <aside id="ajustes" class="ajustes vidrio oculto" aria-label="Ajustes de la página">
+    <h3>Personaliza la web</h3>
+    <p class="etiqueta">Color principal</p>
+    <div class="colores">
+      <button class="color" data-rgb="37,99,235" style="background:#2563eb" type="button" aria-label="Azul"></button>
+      <button class="color" data-rgb="147,51,234" style="background:#9333ea" type="button" aria-label="Violeta"></button>
+      <button class="color" data-rgb="5,150,105" style="background:#059669" type="button" aria-label="Verde"></button>
+      <button class="color" data-rgb="219,39,119" style="background:#db2777" type="button" aria-label="Rosa"></button>
+      <button class="color" data-rgb="234,88,12" style="background:#ea580c" type="button" aria-label="Naranja"></button>
+    </div>
+    <label>Transparencia del vidrio <input type="range" id="aj-transp" min="2" max="40" value="10"></label>
+    <label>Desenfoque <input type="range" id="aj-blur" min="0" max="40" value="14"></label>
+    <label>Tamaño de letra <input type="range" id="aj-letra" min="90" max="125" value="100"></label>
+    <label class="check"><input type="checkbox" id="aj-anim" checked> Fondo animado</label>
+    <button id="aj-reset" class="boton-vidrio" type="button">Restablecer</button>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
